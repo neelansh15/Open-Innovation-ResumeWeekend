@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class="home box d-flex justify-content-center align-items-center">
+  <div class="home box d-flex justify-content-center align-items-center" :style="{backgroundImage: 'url(\'' + bg + '\')'}">
     <div>
       <h1>Résumé Weekend</h1>
       <h2 style="margin-left:5px">Showcase your personal projects in your own professional portfolio.</h2>
@@ -20,8 +20,18 @@
 
 export default {
   name: 'Home',
+  data(){
+    return{
+      bg: require('../assets/nycbackground2.jpg')
+    }
+  }
 }
 </script>
 
 <style>
+.box{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 </style>

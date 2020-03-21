@@ -6,7 +6,10 @@
 
 <script>
 export default {
-
+  name: 'Admin',
+  mounted(){
+    
+  }
 }
 </script>
 
