@@ -34,6 +34,7 @@
 
 <script>
 import axios from 'axios'
+import qs from 'qs'
 
 export default {
   name: 'Register',
@@ -59,15 +60,16 @@ export default {
           // 'Authorization': 4200
         }
 
+        const data = {
+          email: this.email,
+          password: this.password,
+          username: this.username
+        }
         //Send a POST request to the PHP API
        axios({
          method: 'post',
          url: this.postURL,
-         data:{
-           email: this.email,
-           password: this.password,
-           username: this.username
-         },
+         data: qs.stringify(data),
          headers: headers
        }).then((response) => {
          alert(response.data)
