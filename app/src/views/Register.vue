@@ -4,18 +4,18 @@
     <div class="card" style="width:40rem">
       <h1 class="card-header">Register</h1>
       <div class="card-body">
-        <form action="" method="POST">
+        <form @submit.prevent="register()">
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" name="email" id="email">
+                <input type="email" class="form-control" name="email" id="email" v-model="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" class="form-control" name="password" id="password">
+                <input type="password" class="form-control" name="password" id="password" v-model="password" required>
             </div>
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" class="form-control" name="username" id="username" aria-describedby="namehelper">
+                <input type="text" class="form-control" name="username" id="username" aria-describedby="namehelper" v-model="username" required>
                 <small id="namehelper" class="form-text text-muted">This will be used in your portfolio's URL</small>
             </div>
             <div class="form-group">
@@ -33,8 +33,44 @@
 </template>
 
 <script>
-export default {
+import axios from 'axios'
 
+export default {
+  name: 'Register',
+  methods:{
+    register(){
+      //Check if the fields are empty
+      if(this.email != "" && this.username != "" && this.password != ""){
+        //Destroy an already existing session
+        if(this.$session.exists())
+          this.$session.destroy()
+        
+        //Headers
+        const headers = {
+          'Content-Type' :'application/x-www-form-urlencoded',
+          'Auth-Token': 4200
+        }
+
+        //Send a POST request to the PHP API
+        axios.post('http://localhost:80/resumeweekend/Post',{
+          email: this.email,
+          password: this.password,
+          username: this.username
+        },{//Third parameter
+          headers: headers
+        })
+        .then((response) => {
+          if(response.data == "success")
+            alert("Registered")
+          else
+            alert("Problem registering on the PHP server")
+        }).catch((response) => {
+          alert("Something went wrong.\n" + response)
+        })
+        
+      }
+    }
+  }
 }
 </script>
 

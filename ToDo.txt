@@ -2,3 +2,6 @@
 portfolio will be hosted
 
 2) Add theme support
+
+3) Remember to implement XSS Security measures when dealing with output
+4) Hash the passwords with Codeigniter
