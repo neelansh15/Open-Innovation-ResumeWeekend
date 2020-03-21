@@ -37,6 +37,11 @@ import axios from 'axios'
 
 export default {
   name: 'Register',
+  data(){
+    return{
+      postURL: 'http://localhost:80/resumeweekend/Post'
+    }
+  },
   methods:{
     register(){
       //Check if the fields are empty
@@ -52,22 +57,23 @@ export default {
         }
 
         //Send a POST request to the PHP API
-        axios.post('http://localhost:80/resumeweekend/Post',{
-          email: this.email,
-          password: this.password,
-          username: this.username
-        },{//Third parameter
-          headers: headers
-        })
-        .then((response) => {
-          if(response.data == "success")
-            alert("Registered")
-          else
-            alert("Problem registering on the PHP server")
-        }).catch((response) => {
-          alert("Something went wrong.\n" + response)
-        })
-        
+       axios({
+         method: 'post',
+         url: this.postURL,
+         data:{
+           email: this.email,
+           password: this.password,
+           username: this.username
+         },
+         headers: headers
+       }).then((response) => {
+         alert(response)
+       }).catch((response) => {
+         alert(response)
+       });
+
+      
+
       }
     }
   }
