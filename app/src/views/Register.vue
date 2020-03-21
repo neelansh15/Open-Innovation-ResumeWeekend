@@ -39,7 +39,10 @@ export default {
   name: 'Register',
   data(){
     return{
-      postURL: 'http://localhost:80/resumeweekend/Post'
+      postURL: 'http://localhost:80/resumeweekend/Post',
+      email: '',
+      password: '',
+      username: ''
     }
   },
   methods:{
@@ -52,8 +55,8 @@ export default {
         
         //Headers
         const headers = {
-          'Content-Type' :'application/x-www-form-urlencoded',
-          'Auth-Token': 4200
+          'Content-Type' :'application/x-www-form-urlencoded'
+          // 'Authorization': 4200
         }
 
         //Send a POST request to the PHP API
@@ -67,12 +70,10 @@ export default {
          },
          headers: headers
        }).then((response) => {
-         alert(response)
+         alert(response.data)
        }).catch((response) => {
-         alert(response)
+         alert(response.data)
        });
-
-      
 
       }
     }
