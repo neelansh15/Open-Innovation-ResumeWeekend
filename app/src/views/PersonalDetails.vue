@@ -3,11 +3,11 @@
       <h1>Personal Details</h1>
       <p style="font-weight:400" class="lead">This information will be displayed on all your portfolios</p>
       <!-- Fill all the values in this form from the database -->
-      <form>
+      <form @submit.prevent="update()">
         <div class="row">
           <div class="form-group col">
-            <label for="name">Full Name:</label>
-            <input type="text" name="name" id="name" class="form-control" v-model="name">
+            <label for="fullname">Full Name:</label>
+            <input type="text" name="fullname" id="fullname" class="form-control" v-model="fullname">
           </div>
           <div class="form-group col">
             <label for="mobile">Mobile No.:</label>
@@ -19,7 +19,7 @@
           <label for="bio">About me:</label>
           <textarea v-model="bio" maxlength="1000" cols="3" rows="4" type="text" class="form-control" name="bio" id="bio" aria-describedby="helpId" placeholder="About me" style="resize:none">
           </textarea>
-          <small id="helpId" class="form-text text-muted">A Short and Precise description is suitable</small>
+          <small id="helpId" class="form-text text-muted">A Short and Precise description goes a long way</small>
         </div>
 
         <div class="row">
@@ -51,22 +51,31 @@
 
         <button class="btn btn-dark">Update</button>
 
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top:1rem" v-if="showAlert">
+          Success!
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="showAlert = false">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
       </form>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import qs from 'qs'
 
 export default {
     name: 'PersonalDetails',
     data(){
       return{
         getUserURL: 'http://localhost:80/resumeweekend/Get/users/',
+        postUserURL: 'http://localhost:80/resumeweekend/Post/update',
         username: '',
         userDataJSON: '',
 
-        name: '',
+        fullname: '',
         mobile: 0,
         bio: '',
         github: '',
@@ -74,6 +83,52 @@ export default {
         facebook: '',
         twitter: '',
         linkedin: '',
+
+        showAlert: false
+      }
+    },
+    methods: {
+      update(){
+
+        const data = {
+          'username': this.username,
+          'name': this.fullname,
+          'mobile': this.mobile,
+          'bio': this.bio,
+          'github': this.github,
+          'devfolio': this.devfolio,
+          'facebook': this.facebook,
+          'twitter': this.twitter,
+          'linkedin': this.linkedin
+        }
+
+        const headers = {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+
+        axios({
+          method: 'post',
+          url: this.postUserURL,
+          data: qs.stringify(data),
+          headers: headers
+        })
+        .then((response) => {
+          //Show Success alert for 3sec using vue-toast-notification
+          if(response.data == "success"){
+            //All the settings are defaults (except the message), but still I am setting the options as I
+            //am using this for the first time
+            Vue.$toast.open({
+              message: 'Updated',
+              type: 'success',
+              position: 'bottom-right',
+              duration: 3000
+            })
+          }
+        })
+        .catch((response) => {
+          alert("Error:\n" + response);
+        })
+
       }
     },
     created(){
@@ -85,7 +140,7 @@ export default {
       .then((response) => {
         this.userDataJSON = response.data
 
-        this.name = this.userDataJSON.name
+        this.fullname = this.userDataJSON.name
         this.mobile = this.userDataJSON.mobile
         this.bio = this.userDataJSON.bio
         this.github = this.userDataJSON.github

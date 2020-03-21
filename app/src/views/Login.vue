@@ -78,7 +78,7 @@ export default {
   },
   created(){
     if(this.$session.exists()){
-        this.$router.push('Admin')
+        this.$router.push('Admin/portfolios')
     }
   }
 }

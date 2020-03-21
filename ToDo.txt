@@ -13,3 +13,6 @@ make a template repo for future projects. Should have basic vue with router and 
 
 7) Don't limit this to developers, expand this to artisians as well and put their social links too. Like Dribble for Web Designers, and some
 other sites for graphic designers, game desginers, etc.
+
+8) Maybe include an online code editor like Codiad for coding? Will have to think seriously about the access though. If programmers can break
+something, they WILL
