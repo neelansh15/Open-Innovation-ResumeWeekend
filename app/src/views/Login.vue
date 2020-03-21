@@ -13,7 +13,7 @@
                 <label for="password">Password:</label>
                 <input type="password" v-model="password" class="form-control" name="password" id="password" required>
             </div>
-            <button class="btn btn-dark" type="submit">Login</button>
+            <button class="btn btn-dark" type="submit">Log in</button>
 
             <p class="lead" style="color:white">Not registered? <router-link to="/register">Register here</router-link></p>
             <p class="lead"><router-link to="/">Back to Home</router-link></p>

@@ -12,10 +12,10 @@
             <router-link to="/" class="nav-link">Home</router-link>
         </li>
         <li class="nav-item">
-            <router-link to="/login" class="nav-link">Log in</router-link>
+            <router-link to="/login" class="nav-link">Personal Details</router-link>
         </li>
         <li class="nav-item">
-            <router-link to="/register" class="nav-link">Register</router-link>
+            <router-link to="/register" class="nav-link">Portfolios</router-link>
         </li>
         </ul>
     </div>

@@ -14,9 +14,9 @@
                 <input type="password" class="form-control" name="password" id="password">
             </div>
             <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" name="name" id="text" aria-describedby="namehelper">
-                <small id="namehelper" class="form-text text-muted">This name will be used for your portfolio</small>
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" name="username" id="username" aria-describedby="namehelper">
+                <small id="namehelper" class="form-text text-muted">This will be used in your portfolio's URL</small>
             </div>
             <div class="form-group">
               <p class="lead text-muted">You will be required to enter portfolio details once logged in</p>

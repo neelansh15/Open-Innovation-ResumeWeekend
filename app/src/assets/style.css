@@ -18,6 +18,8 @@
   padding: 10px 20px 10px;
   color: white;
   margin: 1rem 1rem 0 0;
+  -webkit-transition: all ease-in-out 0.125s;
+  transition: all ease-in-out 0.125s;
 }
 
 .LoginBtn {
@@ -65,8 +67,8 @@
 
 .box .card .card-header button, .box .card .card-body button {
   margin: 0 0 1rem 0;
-  -webkit-transition: all ease-in-out 0.5s;
-  transition: all ease-in-out 0.5s;
+  -webkit-transition: all ease-in-out 0.125s;
+  transition: all ease-in-out 0.125s;
   background-color: #3f474e;
 }
 
