@@ -8,6 +8,10 @@
           </div>
         </div>
     </div>
+
+    <div class="container">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -22,7 +26,6 @@ export default {
   data(){
     return{
       jumbobg: require('../assets/jumbobg.png'),
-      activeTab: 0,
       username: ''
     }
   },

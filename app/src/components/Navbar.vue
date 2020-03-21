@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background:none">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background:none;">
     <div class="container">
         <a class="navbar-brand" href="#">Résumé Weekend</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,10 +9,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <router-link to="/login" class="nav-link">Personal Details</router-link>
+                    <a href="portfolios" class="nav-link" style="cursor: pointer;">Portfolios</a>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/register" class="nav-link">Portfolios</router-link>
+                    <a href="personaldetails" class="nav-link" style="cursor: pointer;">Personal Details</a>
                 </li>
             </ul>
 

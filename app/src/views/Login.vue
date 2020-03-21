@@ -60,7 +60,7 @@ export default {
         .then((response) => {
           if(response.data == "1"){
             this.$session.set('username', this.username)
-            this.$router.push('Admin')
+            this.$router.push('Admin/Portfolios')
           }
           else{
             alert(response.data)
