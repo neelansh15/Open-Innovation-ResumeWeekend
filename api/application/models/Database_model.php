@@ -13,4 +13,15 @@ class Database_model extends CI_Model{
         }
         return FALSE;
     }
+
+    public function getAllData($username){
+        $this->load->database();
+        $query = $this->db->query("SELECT * FROM users");
+        //Not as efficient as using WHERE username == $username BUT this works and that doesn't, for now
+        foreach($query->result_array() as $row){
+            if($row["username"] == $username){
+                return json_encode($row);
+            }     
+        }
+    }
 }

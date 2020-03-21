@@ -2,7 +2,6 @@
   <div>
       <h1>Personal Details</h1>
       <p style="font-weight:400" class="lead">This information will be displayed on all your portfolios</p>
-
       <!-- Fill all the values in this form from the database -->
       <form>
         <div class="row">
@@ -57,14 +56,47 @@
 </template>
 
 <script>
-// import axios from 'axios'
-// import qs from 'qs'
+import axios from 'axios'
 
 export default {
-    name: 'Personal Details',
+    name: 'PersonalDetails',
+    data(){
+      return{
+        getUserURL: 'http://localhost:80/resumeweekend/Get/users/',
+        username: '',
+        userDataJSON: '',
+
+        name: '',
+        mobile: 0,
+        bio: '',
+        github: '',
+        devfolio: '',
+        facebook: '',
+        twitter: '',
+        linkedin: '',
+      }
+    },
+    created(){
+      this.username = this.$session.get('username')
+    },
     mounted(){
       //Load all the user data from the API
-      
+      axios.get(this.getUserURL + this.username)
+      .then((response) => {
+        this.userDataJSON = response.data
+
+        this.name = this.userDataJSON.name
+        this.mobile = this.userDataJSON.mobile
+        this.bio = this.userDataJSON.bio
+        this.github = this.userDataJSON.github
+        this.devfolio = this.userDataJSON.devfolio
+        this.facebook = this.userDataJSON.facebook
+        this.twitter = this.userDataJSON.twitter
+        this.linkedin = this.userDataJSON.linkedin
+      })
+      .catch((response) => {
+        alert("Error: \n" + response.data)
+      })
     }
 }
 </script>

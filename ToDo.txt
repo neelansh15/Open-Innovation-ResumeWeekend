@@ -10,3 +10,6 @@ portfolio will be hosted
 make a template repo for future projects. Should have basic vue with router and a complete/partially complete PHP Codeigniter API
 
 6) Add image upload capabilities later
+
+7) Don't limit this to developers, expand this to artisians as well and put their social links too. Like Dribble for Web Designers, and some
+other sites for graphic designers, game desginers, etc.

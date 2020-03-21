@@ -8,6 +8,15 @@ class Get extends CI_Controller{
         header("Access-Control-Allow-Headers: Authorization");
 
     }
+    public function users($username){
+        //CORS. Allow access from all domains and stuff
+        header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        header("Access-Control-Allow-Headers: Authorization");
+
+        $this->load->model('Database_model', 'dbmodel');
+        echo $this->dbmodel->getAllData($username);
+    }
     public function login(){
         //CORS. Allow access from all domains and stuff
         header('Access-Control-Allow-Origin: *');
