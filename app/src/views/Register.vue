@@ -70,9 +70,12 @@ export default {
          method: 'post',
          url: this.postURL,
          data: qs.stringify(data),
-         headers: headers
+         headers: headers 
        }).then((response) => {
-         alert(response.data)
+          if(response.data == "success")
+            this.$router.push('Admin')
+          else
+            alert(response.data)
        }).catch((response) => {
          alert(response.data)
        });

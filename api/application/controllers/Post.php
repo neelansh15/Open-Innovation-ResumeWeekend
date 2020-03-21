@@ -12,30 +12,33 @@ class Post extends CI_Controller{
             $password = $this->input->post('password');
             $username = $this->input->post('username');
 
-            $data = array(
-                'email' => $email,
-                'password' => $password,
-                'username' => $username
-            );
-    
-            if($email != NULL && $password != NULL && $username != NULL){
-                $this->load->database();
-                $this->db->insert('users', $data);
-                echo "success";
+            //Check if username and email exist, here
+            $this->load->model('Database_model','dbmodel');
+            if(!dbmodel->userExists($username, $email)){                
+
+                $data = array(
+                    'email' => $email,
+                    'password' => $password,
+                    'username' => $username
+                );
+        
+                if($email != NULL && $password != NULL && $username != NULL){
+                    $this->load->database();
+                    $this->db->insert('users', $data);
+                    echo "success";
+                }
+                else{
+                    echo "failed. Server error";
+                }
             }
             else{
-                echo "failed. Server error";
+                echo "Username or Email already exists";
             }
     
         }
         else{
             echo "No form data was passed";
-        }
-
-
-        //Check if username exists, here
-
-        
+        }      
 
     }
 }
