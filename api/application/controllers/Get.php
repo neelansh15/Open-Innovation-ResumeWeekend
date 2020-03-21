@@ -23,7 +23,7 @@ class Get extends CI_Controller{
 
             //Check if user exists with the dbmodel
             if($this->dbmodel->userExists($username, "__null__email__")){
-                //Not the most efficient, but the WHERE username==$username method wasn't working
+                //NOT the most efficient, but the WHERE username==$username method wasn't working
                 $query = $this->db->query("SELECT * FROM users");
                 foreach($query->result_array() as $row){
                     if($row["username"] == $username)

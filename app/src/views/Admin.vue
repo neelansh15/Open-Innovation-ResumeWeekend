@@ -1,9 +1,13 @@
 <template>
   <div>
-      <Navbar></Navbar>
-      <div class="container">
-        <h1 class="display-2">Hello there, {{ username }}!</h1>
-      </div>
+    <div :style="{backgroundImage: 'url(\'' + jumbobg + '\')'}">
+        <Navbar></Navbar>
+        <div class="jumbotron jumbo-admin" :style="{backgroundImage: 'url(\'' + jumbobg + '\')', color:'white',borderRadius: 0}">
+          <div class="container">
+            <h1 class="display-3">Hello there, {{ username }}!</h1>
+          </div>
+        </div>
+    </div>
   </div>
 </template>
 
@@ -17,6 +21,7 @@ export default {
   },
   data(){
     return{
+      jumbobg: require('../assets/jumbobg.png'),
       activeTab: 0,
       username: ''
     }
@@ -32,6 +37,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
