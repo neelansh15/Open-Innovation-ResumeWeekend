@@ -14,8 +14,8 @@ class Post extends CI_Controller{
 
             //Check if username and email exist, here
             $this->load->model('Database_model','dbmodel');
-            if(!dbmodel->userExists($username, $email)){                
-
+            if($this->dbmodel->userExists($username, $email) == FALSE){                
+                //If username and email do not exist
                 $data = array(
                     'email' => $email,
                     'password' => $password,

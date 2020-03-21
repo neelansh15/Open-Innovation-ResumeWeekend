@@ -73,9 +73,12 @@ export default {
          headers: headers 
        }).then((response) => {
           if(response.data == "success")
+          {
             this.$router.push('Admin')
-          else
+          }
+          else{
             alert(response.data)
+          }
        }).catch((response) => {
          alert(response.data)
        });
