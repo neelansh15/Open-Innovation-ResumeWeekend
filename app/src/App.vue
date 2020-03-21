@@ -1,14 +1,6 @@
 <template>
   <div id="app">
-    <!-- <div class="box">
-      <Navbar></Navbar>
-      <div class="content">
-        <router-view/>
-      </div>
-    </div> -->
-    <div class="container">
-      <router-view/>
-    </div>
+    <router-view/>
   </div>
 </template>
 
@@ -23,5 +15,5 @@ export default {
 </script>
 
 <style>
-
+@import './assets/style.css'
 </style>

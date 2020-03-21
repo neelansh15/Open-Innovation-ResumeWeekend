@@ -1,0 +1,2 @@
+1) Add a URL shortener to give the users a shortned url to share, apart from the regular place where their
+portfolio will be hosted

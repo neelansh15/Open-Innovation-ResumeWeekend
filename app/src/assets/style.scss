@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Sen:400,700,800&display=swap');
 
 //Website Color Scheme
-$redlight: rgb(241, 66, 66);
-$reddark: darken($redlight, 10);
+$red: rgb(241, 66, 66);
+
 $greenish: rgb(90, 201, 140);
 $matteblack: #343a40;
 
@@ -20,14 +20,6 @@ $matteblack: #343a40;
     top: 0;
 }
 
-.box h1{
-    color: $redlight;
-    font-weight: 700;
-    font-size: 6rem;
-}
-.box h2{
-    color: rgb(230, 230, 230);
-}
 .rBtn{
     border-radius: 8px;
     padding: 10px 20px 10px;
@@ -38,13 +30,44 @@ $matteblack: #343a40;
     border: 1px solid white;
     background: None;
     &:hover{
-        background-color: $redlight;
+        background-color: $red;
     }
 }
 .RegisterBtn{
     border: 1px solid white;
-    background-color: $redlight;
+    background-color: $red;
     &:hover{
-        background-color: lighten($color: $redlight, $amount: 5);
+        background-color: lighten($color: $red, $amount: 5);
+    }
+}
+
+.box{
+    h1{
+        color: $red;
+        font-weight: 700;
+        font-size: 6rem;
+    }
+    
+    h2{
+        color: rgb(230, 230, 230);
+    }
+    .card{
+        color: lighten($color: $red, $amount: 10);
+        border: none;
+        .card-header, .card-body{
+            background-color: $matteblack;
+            border: none;
+            input{
+                background-color: $matteblack;
+                color: white;
+            }
+            button{
+                margin: 0 0 1rem 0;
+                background-color: lighten($color: $matteblack, $amount: 5);
+                &:hover{
+                    background-color: darken($color: $matteblack, $amount: 2);
+                }
+            }
+        }
     }
 }

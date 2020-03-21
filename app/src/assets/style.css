@@ -13,16 +13,6 @@
   top: 0;
 }
 
-.box h1 {
-  color: #f14242;
-  font-weight: 700;
-  font-size: 6rem;
-}
-
-.box h2 {
-  color: #e6e6e6;
-}
-
 .rBtn {
   border-radius: 8px;
   padding: 10px 20px 10px;
@@ -46,5 +36,39 @@
 
 .RegisterBtn:hover {
   background-color: #f35a5a;
+}
+
+.box h1 {
+  color: #f14242;
+  font-weight: 700;
+  font-size: 6rem;
+}
+
+.box h2 {
+  color: #e6e6e6;
+}
+
+.box .card {
+  color: #f57171;
+  border: none;
+}
+
+.box .card .card-header, .box .card .card-body {
+  background-color: #343a40;
+  border: none;
+}
+
+.box .card .card-header input, .box .card .card-body input {
+  background-color: #343a40;
+  color: white;
+}
+
+.box .card .card-header button, .box .card .card-body button {
+  margin: 0 0 1rem 0;
+  background-color: #3f474e;
+}
+
+.box .card .card-header button:hover, .box .card .card-body button:hover {
+  background-color: #2f353a;
 }
 /*# sourceMappingURL=style.css.map */
