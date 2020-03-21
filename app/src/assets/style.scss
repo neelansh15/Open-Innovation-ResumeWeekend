@@ -2,7 +2,7 @@
 
 //Website Color Scheme
 $redlight: rgb(241, 66, 66);
-$reddark: darken($redlight, 20);
+$reddark: darken($redlight, 10);
 $greenish: rgb(90, 201, 140);
 $matteblack: #343a40;
 
@@ -27,4 +27,24 @@ $matteblack: #343a40;
 }
 .box h2{
     color: rgb(230, 230, 230);
+}
+.rBtn{
+    border-radius: 8px;
+    padding: 10px 20px 10px;
+    color: white;
+    margin: 1rem 1rem 0 0;
+}
+.LoginBtn{
+    border: 1px solid white;
+    background: None;
+    &:hover{
+        background-color: $redlight;
+    }
+}
+.RegisterBtn{
+    border: 1px solid white;
+    background-color: $redlight;
+    &:hover{
+        background-color: lighten($color: $redlight, $amount: 5);
+    }
 }

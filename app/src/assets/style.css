@@ -22,4 +22,29 @@
 .box h2 {
   color: #e6e6e6;
 }
+
+.rBtn {
+  border-radius: 8px;
+  padding: 10px 20px 10px;
+  color: white;
+  margin: 1rem 1rem 0 0;
+}
+
+.LoginBtn {
+  border: 1px solid white;
+  background: None;
+}
+
+.LoginBtn:hover {
+  background-color: #f14242;
+}
+
+.RegisterBtn {
+  border: 1px solid white;
+  background-color: #f14242;
+}
+
+.RegisterBtn:hover {
+  background-color: #f35a5a;
+}
 /*# sourceMappingURL=style.css.map */
