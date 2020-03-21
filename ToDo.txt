@@ -5,3 +5,6 @@ portfolio will be hosted
 
 3) Remember to implement XSS Security measures when dealing with output
 4) Hash the passwords with Codeigniter
+
+5) long term
+make a template repo for future projects. Should have basic vue with router and a complete/partially complete PHP Codeigniter API
