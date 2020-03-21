@@ -117,10 +117,10 @@ export default {
           if(response.data == "success"){
             //All the settings are defaults (except the message), but still I am setting the options as I
             //am using this for the first time
-            Vue.$toast.open({
+            this.$toast.open({
               message: 'Updated',
               type: 'success',
-              position: 'bottom-right',
+              position: 'bottom',
               duration: 3000
             })
           }

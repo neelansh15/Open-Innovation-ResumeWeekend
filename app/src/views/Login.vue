@@ -62,8 +62,24 @@ export default {
             this.$session.set('username', this.username)
             this.$router.push('Admin/Portfolios')
           }
+          else if(response.data == "Incorrect Password"){
+            //Raise a toast notification to it
+            this.$toast.open({
+              message: 'Incorrect Password',
+              type: 'error',
+              duration: 3000,
+              position: 'bottom'
+            })
+          }
           else{
-            alert(response.data)
+            //Raise a toast to any other error
+             //Raise a toast notification to it
+            this.$toast.open({
+              message: response.data,
+              type: 'info',
+              duration: 3000,
+              position: 'bottom'
+            })
           }
 
         })

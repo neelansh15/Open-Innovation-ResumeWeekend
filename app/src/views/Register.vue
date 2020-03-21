@@ -78,10 +78,20 @@ export default {
             this.$router.push('Admin/PersonalDetails')
           }
           else{
-            alert(response.data)
+            this.$toast.open({
+              message: response.data,
+              type: 'error',
+              duration: 3000,
+              position: 'bottom' 
+            })
           }
        }).catch((response) => {
-         alert(response.data)
+         this.$toast.open({
+              message: response.data,
+              type: 'error',
+              duration: 3000,
+              position: 'bottom' 
+            })
        });
 
       }
