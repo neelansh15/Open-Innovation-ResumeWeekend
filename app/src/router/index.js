@@ -2,8 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Home from '../views/Home.vue'
-import Portfolios from '../components/Portfolios.vue'
-import PersonalDetails from '../components/PersonalDetails.vue'
+import Portfolios from '../views/Portfolios.vue'
+import PersonalDetails from '../views/PersonalDetails.vue'
 
 Vue.use(VueRouter)
 

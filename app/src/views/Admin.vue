@@ -12,6 +12,11 @@
     <div class="container">
       <router-view></router-view>
     </div>
+
+    <div class="jumbotron bg-dark" style="margin: 6rem 0 0 0; border-radius: 0; color:white">
+      <h2>Résumé Weekend</h2>
+      <p>Created as part of a project for the HackNITR Hackathon</p>
+    </div>
   </div>
 </template>
 

@@ -8,3 +8,5 @@ portfolio will be hosted
 
 5) long term
 make a template repo for future projects. Should have basic vue with router and a complete/partially complete PHP Codeigniter API
+
+6) Add image upload capabilities later

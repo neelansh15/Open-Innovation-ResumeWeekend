@@ -23,6 +23,7 @@ export default {
   data(){
     return{
       bg: require('../assets/nycbackground2.jpg')
+      // bg: require('../assets/jumbobg.png')
     }
   }
 }
