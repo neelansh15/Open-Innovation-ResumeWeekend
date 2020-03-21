@@ -28,11 +28,19 @@
 <script>
 export default {
   name: 'Login',
+  data(){
+    return{
+      GETcheckURL: 'http://localhost:80/resumeweekend/Get/login'
+    }
+  },
   methods:{
     login(){
-      // this.$session.start()
-      // this.$session.set('email', this.email)
-      // this.$router.push('Admin')
+      
+    }
+  },
+  created(){
+    if(this.$session.exists()){
+        this.$router.push('Admin')
     }
   }
 }

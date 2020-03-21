@@ -74,6 +74,7 @@ export default {
        }).then((response) => {
           if(response.data == "success")
           {
+            this.$session.set('username', this.username)
             this.$router.push('Admin')
           }
           else{
