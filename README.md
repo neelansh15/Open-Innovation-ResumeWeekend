@@ -12,3 +12,12 @@ Another challenge was to manage the database flow for our custom portfolio-hosti
 
 Adding to it, I would say that a big challenge was going on with the project alone. My teammate had to back out due to unforeseen circumstances, and carrying on the grind alone was not an easy task :)
 
+## Tech Stack
+The project uses **VueJS** as the front-end framework and **PHP** for the back-end API. **MySQL** is the database of choice.
+
+## Running the project
+VueJS resides in the `app/` directory. You would have to manually change the API URLs in a lot of places. To avoid that, host your **PHP** application from the `api/` directory to the URL: `http://localhost:80/resumeweekend` (which is currently configured for the API calls)
+
+_You can find dedicated information about hosting both the VueJS app and the PHP API in their respective folder's READMEs_
+___VueJS__: `app/`  
+__PHP__: `api/`_
