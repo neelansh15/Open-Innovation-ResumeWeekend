@@ -8,9 +8,9 @@
             <p>{{ portfolio.description }}</p>
           </div>
           <div>
-            <button class="btn btn-info" style="margin-right:1rem">Edit</button>
+            <button class="btn btn-info" style="margin-right:0.5rem">Edit</button>
             <button class="btn btn-danger">Delete</button>
-            <!-- Make delete and edit comonents for this -->
+            <!-- Make delete and edit comonents for this later -->
           </div>
         </li>
       </ul>

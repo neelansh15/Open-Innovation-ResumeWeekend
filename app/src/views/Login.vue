@@ -60,7 +60,7 @@ export default {
         .then((response) => {
           if(response.data == "1"){
             this.$session.set('username', this.username)
-            this.$router.push('Admin/Portfolios')
+            this.$router.push('Admin/personaldetails')
           }
           else if(response.data == "Incorrect Password"){
             //Raise a toast notification to it
@@ -94,7 +94,7 @@ export default {
   },
   created(){
     if(this.$session.exists()){
-        this.$router.push('Admin/portfolios')
+        this.$router.push('Admin/personaldetails')
     }
   }
 }

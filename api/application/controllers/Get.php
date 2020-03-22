@@ -37,6 +37,9 @@ class Get extends CI_Controller{
         echo json_encode($portfolioArray);
 
     }
+    public function view(){
+
+    }
     public function login(){
         //CORS. Allow access from all domains and stuff
         header('Access-Control-Allow-Origin: *');
@@ -71,6 +74,20 @@ class Get extends CI_Controller{
                 echo "User $username does not exist";
             }
             
+        }
+    }
+    public function checkUsername($username){
+        //CORS. Allow access from all domains and stuff
+        header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        header("Access-Control-Allow-Headers: Authorization");
+
+        $this->load->model('Database_model', 'dbmodel');
+        if ($this->dbmodel->userExists($username, '__null__email__')){
+            echo "1";
+        }
+        else{
+            echo "0";
         }
     }
 }

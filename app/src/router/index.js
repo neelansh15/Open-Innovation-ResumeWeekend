@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Portfolios from '../views/Portfolios.vue'
 import PersonalDetails from '../views/PersonalDetails.vue'
+import ProjectsTab from '../views/ProjectsTab.vue'
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,10 @@ const routes = [
       {
         path: 'personaldetails',
         component: PersonalDetails
+      },
+      {
+        path: 'projects',
+        component: ProjectsTab
       }
     ]
   },
@@ -41,6 +46,11 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: () => import('../views/Register.vue')
+  },
+  {
+    path: '/view/:username',
+    name: 'View',
+    component: () => import('../views/Portfolio/PortfolioTemplate.vue')
   }
 ]
 

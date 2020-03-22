@@ -15,7 +15,7 @@
                     <a href="personaldetails" class="nav-link" style="cursor: pointer;">Personal Details</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link" style="cursor: pointer;">Projects</a>
+                    <a href="projects" class="nav-link" style="cursor: pointer;">Projects</a>
                 </li>
             </ul>
 
