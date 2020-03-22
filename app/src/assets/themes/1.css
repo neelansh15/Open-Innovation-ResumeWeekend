@@ -1,0 +1,20 @@
+.jumbotron{
+    color: white;
+    background-size: cover;
+    background-attachment: fixed;
+    border-radius: 0;
+}
+.vbtn{
+    border-radius: 8px;
+    padding: 5px 10px 5px;
+    color: white;
+    margin: 1rem 1rem 0 0;
+    transition: all ease-in-out 0.125s;
+
+    border: 1px solid white;
+    background: None;
+}
+.vbtn:hover{
+    background-color: rgb(216, 109, 97);
+    color: white;
+}

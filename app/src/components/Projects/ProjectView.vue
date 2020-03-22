@@ -37,11 +37,8 @@
 </template>
 
 <script>
-// import projectsJSON from '../assets/projects.json'
-import Projects from '../components/Projects'
-import AddProjectButton from '../components/AddProjectButton'
-
-import axios from 'axios'
+import Projects from './Projects'
+import AddProjectButton from './AddProjectButton'
 
 export default {
   components: {
@@ -49,18 +46,20 @@ export default {
   },
   data(){
     return {
-      // projects: projectsJSON.projects,
-      projects: [],
+      // projects: [],
       tags: ['All'],
       selectedTag: '',
       searchterm: '',
       selectedProjects: [],
       searchorfilter: 1, //0 for search and 1 for filter
 
-      getURL: 'http://localhost/vueprojectlisting/Get',
-      postURL: 'http://localhost/vueprojectlisting/Post'
+      // getURL: 'http://localhost/vueprojectlisting/Get',
+      // postURL: 'http://localhost/vueprojectlisting/Post'
 
     }
+  },
+  props:{
+    projects: Array
   },
   methods:{
 
@@ -91,27 +90,6 @@ export default {
 
     },
 
-  },
-
-  created(){
-    
-  },
-  mounted(){
-    //GET data from the PHP JSON API
-    axios.get(this.getURL).then((response) => {
-      this.projects = response.data.projects
-
-      //Fill up the tags for the filter, now that the projects are loaded
-      this.selectedTag = 'All'
-      this.projects.forEach(project => {
-        project.tags.forEach(tag => {
-          if(!this.tags.includes(tag))
-            this.tags.push(tag)
-        });
-      });
-
-    })
-
   }
 
 }
@@ -119,6 +97,5 @@ export default {
 </script>
 
 <style>
-@import url('../assets/bootstrap.min.css');
-@import url('../assets/style.css');
+/* @import url('../assets/style.css'); */
 </style>

@@ -16,7 +16,7 @@
 
             <a :href="project.github" target="_blank" class="card-link">
               <button class="btn btn-dark">
-                <img src="../assets/githublogo.png" alt="Github" width="16px" height="16px">
+                <img src="../../assets/githublogo.png" alt="Github" width="16px" height="16px">
                 &nbsp; &nbsp; Github
               </button>
             </a>

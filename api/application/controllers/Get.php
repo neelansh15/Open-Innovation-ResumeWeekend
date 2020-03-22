@@ -37,6 +37,26 @@ class Get extends CI_Controller{
         echo json_encode($portfolioArray);
 
     }
+    public function projects($userid){
+        //CORS. Allow access from all domains and stuff
+        header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        header("Access-Control-Allow-Headers: Authorization");
+
+        $this->load->database();
+
+        $projectsArray = array();
+
+        $query = $this->db->query("SELECT * FROM projects");
+        foreach ($query->result_array() as $row) {
+            if($row["user_id"] == $userid){
+                array_push($projectsArray, $row);
+            }
+        }
+
+        echo json_encode($projectsArray);
+
+    }
     public function getIDFromUsername($username){
         //CORS. Allow access from all domains and stuff
         header('Access-Control-Allow-Origin: *');
