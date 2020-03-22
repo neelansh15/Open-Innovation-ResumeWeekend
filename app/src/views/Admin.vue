@@ -22,6 +22,7 @@
 
 <script>
 import Navbar from '../components/Navbar'
+import axios from 'axios'
 
 export default {
   name: 'Admin',
@@ -31,7 +32,9 @@ export default {
   data(){
     return{
       jumbobg: require('../assets/jumbobg.png'),
-      username: ''
+      username: '',
+      
+      getUserURL: 'http://localhost:80/resumeweekend/Get/users/',
     }
   },
   created(){
@@ -41,6 +44,11 @@ export default {
   },
   mounted(){
     this.username = this.$session.get('username')
+
+    //Get and set the User ID for use in Portfolio or future use
+    axios.get(this.getUserURL + this.username).then((response) => {
+      this.$session.set('userid', response.data.id)
+    })
   }
 }
 </script>

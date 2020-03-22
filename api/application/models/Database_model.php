@@ -14,7 +14,7 @@ class Database_model extends CI_Model{
         return FALSE;
     }
 
-    public function getAllData($username){
+    public function getAllUserData($username){
         $this->load->database();
         $query = $this->db->query("SELECT * FROM users");
         //Not as efficient as using WHERE username == $username BUT this works and that doesn't, for now

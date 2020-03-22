@@ -14,6 +14,9 @@
                 <li class="nav-item">
                     <a href="personaldetails" class="nav-link" style="cursor: pointer;">Personal Details</a>
                 </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link" style="cursor: pointer;">Projects</a>
+                </li>
             </ul>
 
             <!-- For the side to the right of the navbar -->

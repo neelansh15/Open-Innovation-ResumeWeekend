@@ -15,7 +15,27 @@ class Get extends CI_Controller{
         header("Access-Control-Allow-Headers: Authorization");
 
         $this->load->model('Database_model', 'dbmodel');
-        echo $this->dbmodel->getAllData($username);
+        echo $this->dbmodel->getAllUserData($username);
+    }
+    public function portfolios($userid){
+        //CORS. Allow access from all domains and stuff
+        header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        header("Access-Control-Allow-Headers: Authorization");
+
+        $this->load->database();
+
+        $portfolioArray = array();
+
+        $query = $this->db->query("SELECT * FROM portfolios");
+        foreach ($query->result_array() as $row) {
+            if($row["user_id"] == $userid){
+                array_push($portfolioArray, $row);
+            }
+        }
+
+        echo json_encode($portfolioArray);
+
     }
     public function login(){
         //CORS. Allow access from all domains and stuff
