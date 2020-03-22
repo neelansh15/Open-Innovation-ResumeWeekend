@@ -1,6 +1,8 @@
 # Open Innovation: ResumeWeekend
 ![node](https://img.shields.io/node/v/vue-cli)
 ![PHP from Packagist (specify version)](https://img.shields.io/packagist/php-v/symfony/symfony/v2.8.0)
+![GitHub repo size](https://img.shields.io/github/repo-size/neelansh15/Open-Innovation-ResumeWeekend?color=purple)
+![GitHub language count](https://img.shields.io/github/languages/count/neelansh15/Open-Innovation-ResumeWeekend?color=yellow)
 
 ### Not just a portfolio builder, but a complete integration with your Github workflow.
 
