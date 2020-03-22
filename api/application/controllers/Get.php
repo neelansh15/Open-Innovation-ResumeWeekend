@@ -37,7 +37,20 @@ class Get extends CI_Controller{
         echo json_encode($portfolioArray);
 
     }
-    public function view(){
+    public function getIDFromUsername($username){
+        //CORS. Allow access from all domains and stuff
+        header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        header("Access-Control-Allow-Headers: Authorization");
+
+        $this->load->database();
+
+        $query = $this->db->query("SELECT * FROM users");
+        foreach($query->result_array() as $row){
+            if($row["username"] == $username){
+                echo $row["id"];
+            }
+        }
 
     }
     public function login(){
