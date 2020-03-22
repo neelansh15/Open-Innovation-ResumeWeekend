@@ -1,4 +1,6 @@
 # Open Innovation: ResumeWeekend
+![node](https://img.shields.io/node/v/vue-cli)
+![PHP from Packagist (specify version)](https://img.shields.io/packagist/php-v/symfony/symfony/v2.8.0)
 
 ### Not just a portfolio builder, but a complete integration with your Github workflow.
 
