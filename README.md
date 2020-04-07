@@ -29,6 +29,6 @@ The project uses **VueJS** as the front-end framework and **PHP** for the back-e
 ## Running the project
 VueJS resides in the `app/` directory. You would have to manually change the API URLs in a lot of places. To avoid that, host your **PHP** application from the `api/` directory to the URL: `http://localhost:80/resumeweekend` (which is currently configured for the API calls)
 
-_You can find dedicated information about hosting both the VueJS app and the PHP API in their respective folder's READMEs_
+_You can find dedicated information about hosting both the VueJS app and the PHP API in their respective folder's READMEs_  
 ___VueJS__: `app/`  
 __PHP__: `api/`_
